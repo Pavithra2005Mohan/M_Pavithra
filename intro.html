@@ -1,32 +1,266 @@
+<!DOCTYPE html>
 <html>
 <head>
-	<title>Intro
-	</title>
-		<link rel="stylesheet" href="css/sty.css">
-    <style>
-    html { min-height:100%;}
-    body {background-image: linear-gradient(120deg, #009688 0%, #d57eeb 100%);}
-    h1 { color:#fff; text-align:center; margin-bottom:40px;}
-    </style>
+	<title>Introduction</title>
+	<link rel="stylesheet" href="css/sty.css">
+	<style>
+		HTML { min-height:100%;}
+		body {
+			background-image: linear-gradient(120deg, #009688 0%, #d57eeb 100%);
+			animation: gradient 5s ease infinite;
+		}
+		h1 {
+			color: #fff;
+			text-align: center;
+			margin-bottom: 40px;
+			animation: slide-in 1s ease-out;
+	}
+		@keyframes gradient {
+			0% {background-position: 0% 50%;}
+			50% {background-position: 100% 50%;}
+		100% {background-position: 0% 50%;}
+		}
+		@keyframes slide-in {
+			0% {opacity: 0; transform: translateY(-20px);}
+			100% {opacity: 1; transform: translateY(0);}
+		}
+		/* New animation for shapes */
+		@keyframes shape-animation {
+			0% {transform: translate(0, 0) rotate(0deg);}
+			25% {transform: translate(50px, 50px) rotate(90deg);}
+			50% {transform: translate(0, 100px) rotate(180deg);}
+			75% {transform: translate(-50px, 50px) rotate(270deg);}
+			100% {transform: translate(0, 0) rotate(360deg);}
+		}
+		.shape {
+			width: 50px;
+			height: 50px;
+			background-color: #E3D57A;
+			position: absolute;
+			animation: shape-animation 5s ease-in-out infinite;
+		}
+		.circle {
+			border-radius: 50%;
+		}
+		.square {
+			top: 50px;
+			left: 50px;
+		}
+		.triangle {
+			width: 0;
+			height: 0;
+			border-left: 25px solid transparent;
+			border-right: 25px solid transparent;
+			border-bottom: 50px solid #fff;
+			top: 100px;
+			left: 100px;
+		}
+		/* Added styles for shapes on the right side */
+		.shape.right {
+			right: 0;
+			animation-direction: reverse;
+		}
+		.circle.right {
+			top: 50%;
+			transform: translateY(-50%) rotate(180deg);
+		}
+		.square.right {
+			top: 50px;
+			left: auto;
+			right: 50px;
+		}
+		.triangle.right {
+			width: 0;
+			height: 0;
+			border-left: 25px solid transparent;
+			border-right: 25px solid transparent;
+			border-bottom: 50px solid #fff;
+			top: 100px;
+			left: auto;
+			right: 100px;
+			 transform: rotate(180deg);
+		}
+		/* Added styles for equal spacing */
+		.shape:nth-child(even) {
+			animation-delay: 2.5s;
+		}
+		.shape.right:nth-child(even) {
+			animation-delay: 2.5s;
+		}
+		.snowflake {
+    color: #45E6ED;
+    font-size: 1em;
+    font-family: Arial;
+    text-shadow: 0 0 1px #000;
+  }
+  
+  @-webkit-keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@-webkit-keyframes snowflakes-shake{0%{-webkit-transform:translateX(0px);transform:translateX(0px)}50%{-webkit-transform:translateX(80px);transform:translateX(80px)}100%{-webkit-transform:translateX(0px);transform:translateX(0px)}}@keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@keyframes snowflakes-shake{0%{transform:translateX(0px)}50%{transform:translateX(80px)}100%{transform:translateX(0px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;-webkit-animation-name:snowflakes-fall,snowflakes-shake;-webkit-animation-duration:10s,3s;-webkit-animation-timing-function:linear,ease-in-out;-webkit-animation-iteration-count:infinite,infinite;-webkit-animation-play-state:running,running;animation-name:snowflakes-fall,snowflakes-shake;animation-duration:10s,3s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running}.snowflake:nth-of-type(0){left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s}.snowflake:nth-of-type(1){left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}.snowflake:nth-of-type(2){left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s}.snowflake:nth-of-type(3){left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s}.snowflake:nth-of-type(4){left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s}.snowflake:nth-of-type(5){left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s}.snowflake:nth-of-type(6){left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s}.snowflake:nth-of-type(7){left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s}.snowflake:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}.snowflake:nth-of-type(9){left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s}
+	.small-square {
+	width: 10px;
+	height: 10px;
+}
+.emoji5 {
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
+}
+.emoji6 {
+  position: fixed;
+  bottom: 150px;
+  right: 150px;
+}
+.emoji7 {
+  position: fixed;
+  bottom: 200px;
+  right: 200px;
+}
+.emoji8 {
+  position: fixed;
+  bottom: 200px;
+  right: 200px;
+}
+.emoji1 {
+  position: fixed;
+  top: 100px;
+  right: 100px;
+}
+.emoji2 {
+  position: fixed;
+  top: 150px;
+  right: 150px;
+}
+.emoji3 {
+  position: fixed;
+  top: 200px;
+  right: 200px;
+}
+.emoji4 {
+  position: fixed;
+  top: 200px;
+  right: 200px;
+}
+.emoji {
+  font-size: 2em;
+  animation: float 2s ease-in-out infinite;
+}
+.emoji {
+  font-size: 2em;
+  animation: shape-animation 5s ease-in-out infinite;
+}
+
+.shape.square {
+  animation-delay: 0s;
+}
+
+.shape.triangle {
+  animation-delay: 1s;
+}
+
+.shape.circle {
+  animation-delay: 2s;
+}
+
+@keyframes shape-animation {
+  0% {transform: translate(0, 0) rotate(0deg);}
+  25% {transform: translate(50px, 50px) rotate(90deg);}
+  50% {transform: translate(0, 100px) rotate(180deg);}
+  75% {transform: translate(-50px, 50px) rotate(270deg);}
+  100% {transform: translate(0, 0) rotate(360deg);}
+}
+
+	</style>
 </head>
 <body>
-<div class="navbar">
- <a href="index.html">Home</a>
-  <a href="intro.html">Intro</a>
- <a href="res (2).html">About me</a>
- <a href="./home.html">Profile</a>
- <a href="contact me.html">Contact me</a>
+	<div class="navbar">
+		<a href="index.html">Home</a>
+		<a href="intro.html">Intro</a>
+		<a href="res (2).html">About me</a>
+		<a href="./home.html">Profile</a>
+		<a href="contact me.html">Contact me</a>
+	</div>
+	<div class="snowflakes" aria-hidden="true">
+            
+            <div class="snowflake">
+            ❅
+            </div>
+            <div class="snowflake">
+            ❅
+            </div>
+            <div class="snowflake">
+            ❆
+            </div>
+            <div class="snowflake">
+            ❄
+            </div>
+            <div class="snowflake">
+            ❅
+            </div>
+            <div class="snowflake">
+            ❆
+            </div>
+            <div class="snowflake">
+            ❄
+            </div>
+            <div class="snowflake">
+            ❅
+            </div>
+            <div class="snowflake">
+            ❆
+            </div>
+            <div class="snowflake">
+            ❄
+            </div>
+          </div>
+<div class="emojis fall">
+  <div class="emoji1 shape square">😀</div>
+  <div class="emoji1 shape triangle">😂</div>
+  <div class="emoji1 shape circle">🤣</div>
+  <div class="emoji2 shape triangle">😍</div>
+  <div class="emoji2 shape circle">🥰</div>
+  <div class="emoji2 shape square">😘</div>
+  <div class="emoji3 shape triangle">😎</div>
+  <div class="emoji3 shape circle">😜</div>
+  <div class="emoji3 shape triangle">🤪</div>
+  <div class="emoji4 shape circle">😉</div>
+  <div class="emoji4 shape triangle">🤯</div>
+  <div class="emoji4 shape circle">🤗</div>
 </div>
-<div class="container" align="center">
-  <div class="row">
-    <div class="col-md-12 text-center">
-      <h3 class="animate-charcter"> INTRODUCTION </h3>
-    </div>
-  </div>
+<div class="emojis fall">
+  <div class="emoji5 shape square">😀</div>
+  <div class="emoji5 shape triangle">😂</div>
+  <div class="emoji5 shape circle">🤣</div>
+  <div class="emoji6 shape triangle">😍</div>
+  <div class="emoji6 shape circle">🥰</div>
+  <div class="emoji6 shape square">😘</div>
+  <div class="emoji7 shape triangle">😎</div>
+  <div class="emoji7 shape circle">😜</div>
+  <div class="emoji7 shape triangle">🤪</div>
+  <div class="emoji8 shape circle">😉</div>
+  <div class="emoji8 shape triangle">🤯</div>
+  <div class="emoji8 shape circle">🤗</div>
 </div>
-		<div id="player" align="center">
-		<video controls>
-<source src="Whiteboard Animation Toolkit_free.mp4" type="video/mp4">		
+	<div class="container" align="center">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h1>INTRODUCTION</h1>
+			</div>
 		</div>
- </body>
+	</div>
+	<div id="player" align="center">
+		<video controls>
+			<source src="Whiteboard Animation Toolkit_free.mp4" type="video/mp4">
+		</video>
+	</div>
+<div class="shape small-square">
+
+	<div class="shape square"></div>
+	<div class="shape triangle"></div>
+	<div class="shape circle"></div>
+	<div class="shape triangle"></div>
+	<div class="shape triangle right"></div>
+	<div class="shape circle right"></div>
+	<div class="shape square right"></div>
+	<div class="shape circle right"></div>
+	</div>
+</body>
 </html>
