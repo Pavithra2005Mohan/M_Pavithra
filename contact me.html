@@ -1,11 +1,296 @@
 <html>
   <head>
   	<title>contact me</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+body::before{
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(51deg,#62c3fc 0%, #dff0fa 80%);
+    clip-path: circle(68.4% at 26% 31%);
+    animation: circle .8s;
+}
+@keyframes circle {
+    0%{
+        margin-top: -100%;
+    }
+    100%{
+        margin-top: 0;
+    }
+}
+.container{
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0px 2px 15px -4px #9e9e9e;
+    border-radius: 5px;
+    animation: container 1.5s ease;
+}
+@keyframes container {
+    0%{
+        margin-top: -100%;
+    }
+    100%{
+        top: 0;
+    }
+}
+.container .image{
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.container .image::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #f0f6ff;
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+}
+.container .image img{
+    margin-left: 100px;
+    height: 200px;
+    z-index: 1;
+}
+.container .form-area{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: form 1.8s ease;
+}
+@keyframes form {
+    0%{
+        margin-left: 500px;
+    }
+    100%{
+        left: 0;
+    }
+}
+.container .form-area h2{
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container .form-area form{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+.container .form-area form input{
+    padding: 15px 5px;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    outline: none;
+}
+.container .form-area form input::placeholder{
+    color: #999;
+    letter-spacing: 1px;
+}
+.container .form-area form input:hover::placeholder,
+.container .form-area form textarea:hover::placeholder{
+    padding-left: 10px;
+    transition: .3s all ease-in-out;
+}
+.container .form-area form input:focus,
+.container .form-area form textarea:focus{
+    border-bottom: 1px solid #62c3fc;
+    animation: border .5s ease;
+}
+@keyframes border {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 100%;
+    }
+}
+.container .form-area form textarea{
+    border: none;
+    border-bottom: 1px solid #ddd;
+    outline: none;
+    resize: none;
+    padding: 0px 5px;
+}
+.container .form-area form textarea::placeholder{
+    font-size: 14px;
+    color: #999;
+}
+.container .form-area form button{
+    margin-top: 10px;
+    border: none;
+    padding: 10px 0px;
+    border-radius: 30px;
+    background-color: #62c3fc;
+    color: #fff;
+    font-size: 17px;
+    cursor: pointer;
+    transition: .3s all ease-in-out;
+}
+.container .form-area form button:hover{
+    background-color: #2fa5e9;
+}
+.container .form-area .social-icons{
+    margin-top: 50px;
+    display: flex;
+}
+.container .form-area .social-icons i{
+    margin-right:  10px;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.container .form-area .social-icons .facebook{
+    background-color: #3b5998;
+    color: #fff;
+}
+.container .form-area .social-icons .instagram{
+    background: linear-gradient(167deg, #0085fc 0%, #f700da 30%, #f7ed00 90%);
+    color: #fff;
+}
+.container .form-area .social-icons .linkedin{
+    background-color: #0e76a8;
+    color: #fff;
+}
+.container .form-area .social-icons .snapchat{
+    background-color: #EAF95D;
+    color: #fff;
+}
+
+@media (min-width:1200px){
+    .main .container{
+        height: 85vh;
+    }
+}
+@media (max-width:1200px) and (min-width:900px){
+    body::before{
+        height: 200px;
+        width: 200px;
+    }
+    .main .container{
+        height: 85vh;
+    }
+    .main .container .image img{
+        margin-left: 30px;
+    }
+    .main .container .form-area h2{
+        font-size: 25px;
+    }
+}
+
+@media (max-width:900px) and (min-width:600px){
+    body::before{
+        height: 150px;
+        width: 150px;
+    }
+    .main .container{
+        width: 95%;
+        height: 85vh;
+    }
+    .main .container .image img{
+        height: 150px;
+        margin-left: 30px;
+    }
+    .main .container .form-area form{
+        width: 90%;
+    }
+}
+@media (max-width:600px){
+    body{
+        height: auto;
+    }
+    body::before{
+        height: 100px;
+        width: 100px;
+    }
+    .main .container{
+        width: 98%;
+        height: auto;
+        flex-direction: column;
+        margin: 20px 0px;
+        box-shadow: none;
+    }
+    .main .container .image{
+        height: 200px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .main .container .image::before{
+        height: 200px;
+        clip-path: polygon(0% 0%, 100% 0, 100% 81%, 50% 100%, 0 81%);
+    }
+    .main .container .image img{
+        height: 150px;
+        margin-left: 0px;
+        margin-top: -40px;
+    }
+    .main .container .form-area{
+        width: 100%;
+    }
+    .main .container .form-area h2{
+        font-size: 25px;
+    }
+    .main .container .form-area form{
+        width: 90%;
+        margin-top: 10px;
+    }
+    .main .container .social-icons{
+        margin: 20px 0px;
+    }
+}
+nav {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+</style>
 	</head>
 	<body>
 <div class="navbar">
@@ -15,174 +300,52 @@
  <a href="./home.html">Profile</a>
  <a href="contact me.html">Contact me</a>
 </div>
-<div class="background-color">
-	<section class="ftco-section">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section"></h2>
-				</div>
-			</div>
-			<div class="row justify-content-center">
-				<div class="col-md-12">
-					<div class="wrapper">
-						<div class="row no-gutters">
-							<div class="col-lg-6" style="background-color: #8991BB">
-								<div class="contact-wrap w-100 p-md-5 p-4">
-									<h3>
-									<b>
-									GET TO KNOW ME
-									</b>
-									</h3>
-									<p class="mb-4"><i>open for any job recruitment or just to have a chat</i></p>
-									<div class="row mb-4">
-										<div class="col-md-4">
-											<div class="dbox w-100 d-flex align-items-start">
-						        		<div class="text">
-										 <a href="https://www.google.com/maps/place/Rajiv+Gandhi+St,+Moovar+Nagar,+Pozhichalur,+Chennai,+Tamil+Nadu+600074/@12.9836667,80.1443125,157m/data=!3m1!1e3!4m6!3m5!1s0x3a525e2ad402d739:0xbc9fefc5a9e0c440!8m2!3d12.9836026!4d80.143993!16s%2Fg%2F11c5h09c3s?entry=ttu">
-										 <i class="fa fa-home fa-fw =margin-right= large text-teal">
-		  </i>
-
-							            <p>
-										<span>
-										Address:
-										</span>
-										<address>
-16/17 A ,Ragiv Gandhi Street,
-<br>
-Moovar Nagar,
-<br>
-pozhichalur,
-<br>
-Chennai-76
-</address>
-</p>
-		</a>
-		</div>
-						          </div>
-										</div>
-										<div class="col-md-4">
-											<div class="dbox w-100 d-flex align-items-start">
-						        		<div class="text">
-										<a href="pavi261105@gmail.com">
-												  <i class="fa fa-envelope fa-fw margin-right large text-teal">
-		  </i>
-
-							            <p><span>Email:</span> <br>pavi261105@gmail.com</p>
-										</a>
-							          </div>
-						          </div>
-										</div>
-										<div class="col-md-4">
-											<div class="dbox w-100 d-flex align-items-start">
-						        		<div class="text">
-										<a href="tel: +917010-154045">
-										<i class="fa fa-phone fa-fw margin-right large text-teal">
-		  </i>
-							            <p><span>Phone:</span>+91 701014045</p>
-							          </a>
-									  </div>
-						          </div>
-										</div>
-									</div>
-									<form method="POST" id="contactForm" name="contactForm" class="contactForm">
-										<div class="row">
-											<div class="col-md-12">
-												<div class="form-group">
-													<input type="text" class="form-control" name="name" id="name" placeholder="Name">
-												</div>
-											</div>
-											<div class="col-md-12">
-												<div class="form-group">
-													<input type="text" class="form-control" name="company name" id="company name" placeholder=" Company Name">
-												</div>
-											</div>
-											<div class="col-md-12"> 
-												<div class="form-group">
-													<input type="email" class="form-control" name="email" id="email" placeholder="Email">
-												</div>
-											</div>
-											<div class="col-md-12">
-												<div class="form-group">
-													<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
-												</div>
-											</div>
-											<div class="col-md-12">
-												<div class="form-group">
-													<textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Create a message here"></textarea>
-												</div>
-											</div>
-											<div class="col-md-12">
-												<div class="form-group">
-													<input type="submit" value="Send Message" class="btn btn-primary">
-													<div class="submitting"></div>
-												</div>
-											</div>
-										</div>
-									</form>
-									<div class="w-100 social-media mt-5">
-										<h3>Follow me on social media</h3>
-										<table>
-										<tr>
-										<th>
-										<div class="insta">
-                    <h3>
-					<a href = "https://www.instagram.com/pavi_mohan_261105/">
-  <i class="fa fa-instagram hover-opacity" style="padding" >
-  </i>
-  </a>
-  </h3>
-                    <p>_ insta _</p>
-                </div>
-				</th>
-				<th>
-                <div class="twitter">
-                    <h3>
+  <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>  <a href="intro.html">Intro</a></li>
+            <li><a href="res (2).html">About me</a></li>
+            <li> <a href="./home.html">Profile</a></li>
+            <li> <a href="contact me.html">Contact me</a></li>
+        </ul>
+    </nav>
+  <div class="main">
+        <div class="container">
+            <div class="image">
+                <img src="contact.png" alt="">
+            </div>
+            <div class="form-area">
+                <h2>Contact US</h2>
+                 <form action="">
+                    <input type="text" id="nameInput" placeholder="Full Name">
+                    <input type="email" id="emailInput" placeholder="Email">
+                    <textarea id="messageInput" cols="30" rows="3" placeholder="Your Message"></textarea>
+                    <button type="button" onclick="sendMessage()">Send Message</button>
+                </form>
+                <div class="social-icons">
 					  <a href = "https://twitter.com/pavi2005thra/">
-  <i class="fa fa-twitter hover-opacity"style="padding">
-  </i>
-  </a>
-  </h3>
-                    <p>_ twitter _</p>
-                </div>
-				</th>
-				<th>
-                <div class="linked-in">
-                    <h3>
+				   <i class="facebook fab fa-twitter"></i></a>
+                   					<a href = "https://www.instagram.com/pavi_mohan_261105/">
+ <i class="instagram fab fa-instagram"></i></a>
   <a href ="https://www.linkedin.com/in/pavithra-mohan-1983a9288?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" >
-  <i class="fa fa-linkedin hover-opacity">
-  </i>
-  </a>
-  </h3>
-                    <p>_ linked_in _</p>
-                </div>
-				</th>
-				<th>
-				                <div class="snapchat">
-                    <h3>
+					<i class="linkedin fab fa-linkedin-in"></i></a>
   <a href = "https://www.snapchat.com/add/pavi261105?sender_web_id=de1f69d2-07c4-4c09-acc3-4d4c3eb13f80&device_type=desktop&is_copy_url=true">
-  <i class="fa fa-snapchat hover-opacity"style="padding">
-  </i>
-  </a>
-  </h3>
-                    <p>_ snapchat _</p>
+					<i class="snapchat fab fa-snapchat"></i></a>
                 </div>
-				</th>
-				</tr>
-				</table>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-6 d-flex align-items-stretch">
-								<div class="info-wrap w-100 p-5 img" style="background-image: url(bgp.jpg);">
-			          </div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	</div>
-	</body>
+            </div>
+        </div>
+    </div>
+  <script>
+        function sendMessage() {
+            var name = document.getElementById("nameInput").value;
+            var email = document.getElementById("emailInput").value;
+            var message = document.getElementById("messageInput").value;
+
+            if (name.trim() !== "" && email.trim() !== "" && message.trim() !== "") {
+                alert("Message sent:\nName: " + name + "\nEmail: " + email + "\nMessage: " + message);
+            } else {
+                alert("Please enter all the details");
+            }
+        }
+    </script></body>
 </html>
