@@ -293,13 +293,6 @@ nav ul li a:hover {
 </style>
 	</head>
 	<body>
-<div class="navbar">
- <a href="index.html">Home</a>
-  <a href="intro.html">Intro</a>
- <a href="res (2).html">About me</a>
- <a href="./home.html">Profile</a>
- <a href="contact me.html">Contact me</a>
-</div>
   <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -335,17 +328,30 @@ nav ul li a:hover {
             </div>
         </div>
     </div>
-  <script>
+     <script>
         function sendMessage() {
             var name = document.getElementById("nameInput").value;
             var email = document.getElementById("emailInput").value;
             var message = document.getElementById("messageInput").value;
 
+            // Check if all fields are filled
             if (name.trim() !== "" && email.trim() !== "" && message.trim() !== "") {
-                alert("Message sent:\nName: " + name + "\nEmail: " + email + "\nMessage: " + message);
+                // Check if email is valid
+                if (validateEmail(email)) {
+                    // Do something with the message
+                    alert("Message sent:\nName: " + name + "\nEmail: " + email + "\nMessage: " + message);
+                } else {
+                    alert("Please enter a valid email address");
+                }
             } else {
                 alert("Please enter all the details");
             }
         }
-    </script></body>
+
+        function validateEmail(emailInput) {
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(emailInput).toLowerCase());
+        }
+    </script>
+</body>
 </html>
