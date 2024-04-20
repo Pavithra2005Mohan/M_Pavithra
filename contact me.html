@@ -289,69 +289,127 @@ nav ul li a {
 
 nav ul li a:hover {
     background-color: #555;
-}
+
 </style>
 	</head>
 	<body>
   <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li>  <a href="intro.html">Intro</a></li>
-            <li><a href="res (2).html">About me</a></li>
-            <li> <a href="./home.html">Profile</a></li>
-            <li> <a href="contact me.html">Contact me</a></li>
-        </ul>
-    </nav>
-  <div class="main">
-        <div class="container">
-            <div class="image">
-                <img src="contact.png" alt="">
-            </div>
-            <div class="form-area">
-                <h2>Contact US</h2>
-                 <form action="">
-                    <input type="text" id="nameInput" placeholder="Full Name">
-                    <input type="email" id="emailInput" placeholder="Email">
-                    <textarea id="messageInput" cols="30" rows="3" placeholder="Your Message"></textarea>
-                    <button type="button" onclick="sendMessage()">Send Message</button>
-                </form>
-                <div class="social-icons">
-					  <a href = "https://twitter.com/pavi2005thra/">
-				   <i class="facebook fab fa-twitter"></i></a>
-                   					<a href = "https://www.instagram.com/pavi_mohan_261105/">
- <i class="instagram fab fa-instagram"></i></a>
-  <a href ="https://www.linkedin.com/in/pavithra-mohan-1983a9288?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" >
-					<i class="linkedin fab fa-linkedin-in"></i></a>
-  <a href = "https://www.snapchat.com/add/pavi261105?sender_web_id=de1f69d2-07c4-4c09-acc3-4d4c3eb13f80&device_type=desktop&is_copy_url=true">
-					<i class="snapchat fab fa-snapchat"></i></a>
-                </div>
-            </div>
-        </div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li>  <a href="intro.html">Intro</a></li>
+        <li><a href="res (2).html">About me</a></li>
+        <li> <a href="./home.html">Profile</a></li>
+        <li> <a href="contact me.html">Contact me</a></li>
+        <li><button id="dark-mode-btn">🌙</button></li>
+    </ul>
+</nav>
+
+<style>
+  /* Add dark mode styles */
+  body.dark-mode {
+    background-color: #2b2b2b;
+    color: #ddd;
+  }
+
+  body.dark-mode * {
+    color: #ddd;
+  }
+
+  body.dark-mode h1,
+  body.dark-mode h2,
+  body.dark-mode h3,
+  body.dark-mode h4,
+  body.dark-mode h5,
+  body.dark-mode h6 {
+    color: #fff;
+  }
+
+  body.dark-mode a {
+    color: #fff;
+  }
+
+  body.dark-mode button {
+    background-color: #fff;
+    color: #2b2b2b;
+  }
+
+  /* Add animation for dark mode transition */
+  body.dark-mode * {
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
+</style>
+
+<script>
+  const darkModeBtn = document.querySelector('#dark-mode-btn');
+  let darkMode = false;
+
+  darkModeBtn.addEventListener('click', () => {
+    darkMode = !darkMode;
+    if (darkMode) {
+      document.body.classList.add('dark-mode');
+      darkModeBtn.textContent = '☀';
+    } else {
+      document.body.classList.remove('dark-mode');
+      darkModeBtn.textContent = '🌙';
+    }
+  });
+</script>
+
+<div class="main">
+  <div class="container">
+    <div class="image">
+      <img src="contact.png" alt="">
     </div>
-     <script>
-        function sendMessage() {
-            var name = document.getElementById("nameInput").value;
-            var email = document.getElementById("emailInput").value;
-            var message = document.getElementById("messageInput").value;
+    <div class="form-area">
+      <h2>Contact US</h2>
+      <form action="">
+        <input type="text" id="nameInput" placeholder="Full Name">
+        <input type="email" id="emailInput" placeholder="Email">
+        <textarea id="messageInput" cols="30" rows="3" placeholder="Your Message"></textarea>
+        <button type="button" onclick="sendMessage()">Send Message</button>
+      </form>
+      <div class="social-icons">
+        <a href="https://twitter.com/pavi2005thra/" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/pavi_mohan_261105/" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/pavithra-mohan-1983a9288?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://www.snapchat.com/add/pavi261105?sender_web_id=de1f69d2-07c4-4c09-acc3-4d4c3eb13f80&device_type=desktop&is_copy_url=true" target="_blank">
+          <i class="fab fa-snapchat"></i>
+        </a>
+     </div>
+    </div>
+  </div>
+</div>
 
-            // Check if all fields are filled
-            if (name.trim() !== "" && email.trim() !== "" && message.trim() !== "") {
-                // Check if email is valid
-                if (validateEmail(email)) {
-                    // Do something with the message
-                    alert("Message sent:\nName: " + name + "\nEmail: " + email + "\nMessage: " + message);
-                } else {
-                    alert("Please enter a valid email address");
-                }
-            } else {
-                alert("Please enter all the details");
-            }
-        }
+<script>
+  function sendMessage() {
+    var name = document.getElementById("nameInput").value;
+    var email = document.getElementById("emailInput").value;
+    var message = document.getElementById("messageInput").value;
 
-        function validateEmail(emailInput) {
-            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            return re.test(String(emailInput).toLowerCase());
-        }
-    </script>
+    // Check if all fields are filled
+    if (name.trim() !== "" && email.trim() !== "" && message.trim() !== "") {
+      // Check if email is valid
+      if (validateEmail(email)) {
+        // Do something with the message
+        alert("Message sent:\nName: " + name + "\nEmail: " + email + "\nMessage: " + message);
+      } else {
+        alert("Please enter a valid email address");
+      }
+    } else {
+      alert("Please enter all the details");
+    }
+  }
+
+  function validateEmail(emailInput) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(emailInput).toLowerCase());
+  }
+</script>
 </body>
 </html>

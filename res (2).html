@@ -131,6 +131,7 @@ background-image: url(res2.webp);
     text-align: left;
   }
 }
+
 </style>
 <body>
 <div class="navbar">
@@ -139,7 +140,9 @@ background-image: url(res2.webp);
  <a href="res (2).html">About me</a>
  <a href="./home.html">Profile</a>
  <a href="contact me.html">Contact me</a>
+ <button id="to-bottom-btn"align="right">⬇</button>
 </div>
+<section id="top"></section>
 <div class="content margin-top" style="max-width:1400px;">
   <div class="row-padding">  
     <div class="third">
@@ -788,6 +791,7 @@ Tamil
     </div>
   </div>
 </div>
+
 <footer class="container teal center margin-top">
   <p>Find me on social media.</p>
   <a href = "https://www.instagram.com/pavi_mohan_261105/">
@@ -806,6 +810,37 @@ Tamil
   <i class="fa fa-linkedin hover-opacity">
   </i>
   </a>
+  <section id="bottom"></section>
+        <div class="container"><button id="to-top-btn">⬆</button>
 </footer>
+<script>
+darkModeBtn.addEventListener('click', () => {
+	darkMode = !darkMode;
+	if (darkMode) {
+		document.body.classList.add('dark-mode');
+		darkModeBtn.textContent = '☀';
+	} else {
+		document.body.classList.remove('dark-mode');
+		darkModeBtn.textContent = '🌙';
+	}
+});
+const toTopBtn = document.getElementById('to-top-btn');
+const toBottomBtn = document.getElementById('to-bottom-btn');
+
+toTopBtn.addEventListener('click', () => {
+	window.scrollTo({
+		top: 0,
+		behavior: 'smooth'
+	});
+});
+
+toBottomBtn.addEventListener('click', () => {
+	const bottom = document.getElementById('bottom').offsetTop;
+	window.scrollTo({
+		top: bottom,
+		behavior: 'smooth'
+	});
+});
+</script>
 </body>
 </html>
